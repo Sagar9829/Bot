@@ -4,9 +4,11 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const { Configuration, OpenAIApi } = require("openai");
 const { getOrderStatus } = require("./shopify"); // Shopify logic
+const cors = require("cors");
 
 dotenv.config();
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
